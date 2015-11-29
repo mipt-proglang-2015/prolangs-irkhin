@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8)
+set(CMAKE_VERBOSE_MAKEFILE on)
+set(Python_ADDITIONAL_VERSIONS 3.4)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+find_package(PythonLibs 3.2 REQUIRED)
+include_directories(${PYTHON_INCLUDE_DIRS})
+python_add_module(laplace laplace.cpp)
+target_link_libraries(laplace ${PYTHON_LIBRARIES})
